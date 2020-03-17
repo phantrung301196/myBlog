@@ -1,0 +1,24 @@
+<p>word works!</p>
+<div *ngIf="isAdd">
+    <input [(ngModel)]="vnInput" placeholder="Vietnamese" />
+    <br/>
+    <input [(ngModel)]="enInput" placeholder="English" />
+    <br/>
+    <button (click)="addWord();">Add</button>
+</div>
+<button (click)="showAddDialog();" *ngIf="!isAdd">Add</button> {{ipWord}}
+
+<div *ngIf="false">
+    <div *ngFor="let word of arrWord">
+        <div [ngClass]="word.memorized === true ? 'memorized' : 'unMemorized'">
+            <p>VN: {{word.vn}}</p>
+            <p>EN: {{word.en}}</p>
+            <button (click)="deleteWord(word.id);">Delete</button>
+            <p>---------------------------------------</p>
+        </div>
+    </div>
+</div>
+
+<ckeditor [editor]="Editor" [(ngModel)]="model.editorData" [(config)]="config"></ckeditor>{{model.editorData}}
+<button (click)="setContent(editor.value)">Get</button>
+<div [innerHTML]="model.editorData"></div>

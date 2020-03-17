@@ -1,0 +1,11 @@
+<div class="col-sm-10" *ngFor="let post of postDetail">
+    <h2>{{post?.title}}</h2>
+    <h5>{{post?.createdDate}}</h5>
+    <p>By: {{post?.owner}}</p>
+    <div>
+        <img class="fakeimg" src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/s960x960/89486867_513011259619354_2913578493595877376_o.jpg?_nc_cat=109&_nc_sid=07e735&_nc_ohc=8lUY1Gg2mYgAX90oRw6&_nc_ht=scontent.fhan3-1.fna&_nc_tp=7&oh=c0b122ab1df4cda026848a033a25457b&oe=5E8CBD2E"
+        />
+    </div>
+    <p [innerHTML]="post?.content"></p>
+    <br>
+</div>

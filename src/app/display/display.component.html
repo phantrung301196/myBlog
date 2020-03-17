@@ -1,0 +1,15 @@
+<!-- Main Content -->
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td colspan="2"></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of content">
+            <td><a routerLink="/post/{{post.id}}">{{post.title}}</a></td>
+            <td>{{post.owner}}</td>
+        </tr>
+    </tbody>
+</table>

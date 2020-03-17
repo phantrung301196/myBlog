@@ -1,0 +1,13 @@
+.memorized {
+    color: green;
+    background-color: yellow;
+}
+
+.unMemorized {
+    color: red;
+    background-color: yellow;
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 500px;
+}
