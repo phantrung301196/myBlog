@@ -33,4 +33,15 @@ module.exports = {
             res.json(response)
         })
     },
+
+    savePost: (req, res) => {
+        let sql = `insert into post_tbl (title, content, owner) 
+                    values (?,?,?)`;
+        let data = [req.body.title, req.body.content, 1];
+        console.log(data);
+        db.query(sql, data, (err, response) => {
+            if (err) throw err;
+            res.json({ message: 'Insert success', id: response.insertId });
+        })
+    }
 }
