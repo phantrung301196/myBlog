@@ -1,0 +1,9 @@
+<div class="alert alert-success" role="alert" *ngIf="notice != ''">
+    {{ notice.message }}
+</div>
+<h2>NEW POST</h2>
+<br/>
+<input class="form-control" [(ngModel)]="post.title" placeholder="Title" />
+<br/>
+<tinymce [(ngModel)]="post.content"></tinymce>
+<button (click)="saveNewPost()">Save</button>
