@@ -8,8 +8,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let post of content">
-            <td><a routerLink="/post/{{post.id}}">{{post.title}}</a></td>
-            <td>{{post.owner}}</td>
+            <td><a routerLink="/post/{{post?.id}}">{{post?.title}}</a></td>
+            <td>{{post?.owner}}</td>
         </tr>
     </tbody>
 </table>
+<button class="btn btn-primary" routerLink="/post">New post</button>

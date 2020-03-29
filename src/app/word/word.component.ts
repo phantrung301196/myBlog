@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IpService } from '../ip.service';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 
 @Component({
   selector: 'app-word',
@@ -22,7 +20,6 @@ export class WordComponent implements OnInit {
   ];
   isAdd: boolean = false;
   ipWord: any = '<h1>abc</h1>';
-  public Editor = ClassicEditor;
   public model = {
     editorData: '<h1>test</h1>'
   };
@@ -37,21 +34,8 @@ export class WordComponent implements OnInit {
 
   ngOnInit() {
 
-    ClassicEditor
-      .create(document.querySelector('#editor'))
-      .then(editor => {
-        console.log('Editor was initialized', editor);
-      })
-      .catch(err => {
-        console.error(err.stack);
-      });
+    
 
-  }
-
-  public onChange({ editor }: ChangeEvent) {
-    const data = editor.getData();
-
-    console.log(data);
   }
 
   public onReady(editor) {
